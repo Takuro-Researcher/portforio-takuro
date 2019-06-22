@@ -136,8 +136,12 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 86vh;
+  background: linear-gradient(120deg, rgba(19, 178, 102, 0.72), rgba(38, 184, 208, 0.72), rgba(50, 107, 185, 0.72), rgba(193, 71, 183, 0.72), rgba(206, 61, 104, 0.72)) ,url("../img/neuron.jpg") fixed;
+  height:86vh;
+  background-size: cover;
 }
+
+
 
 #header .logo {
   position: relative;
@@ -148,14 +152,31 @@ li {
 #header .logo-title {
   font-family: "Open sans", sans-serif;
   font-size: 64px;
+   /* 背景グラデーションを指定・幅を 200% にしておく */
+   background: linear-gradient(to bottom,  #ffffff 0% ,#cccccc 20%, #999999 40%,#666666 60%,#333333 80%,#000000 100%) 0% center / auto 200%;
+  
+   /* 背景画像を文字でマスクする */
+           background-clip: text;
+   -webkit-background-clip: text;
+   /* 文字色を透明にできればよく color: transparent でも color: rgba(0, 0, 0, 0) でも可 */
+   color: transparent;
+   -webkit-text-fill-color: transparent;
+   
+   /* アニメーション指定 */
+  animation: example 3s linear infinite;
   line-height: 1;
   letter-spacing: .2em;
 }
+/* 背景の横位置をズラす */
+@keyframes example {
+  to { background-position-y: 200%; }
+}
 
 #header .logo-desc {
-  font-size: 20px;
+  font-size: 32px;
   margin-top: 5px;
   text-align: center;
+  color: #1d1d1d;
   letter-spacing: .2em;
 }
 
@@ -246,17 +267,17 @@ li {
 }
 
 .card-caption-title {
-  font-size: 18px;
+  font-size: 25px;
   font-weight: bold;
   margin-top: 8px;
 }
 
 .card-caption-info {
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .card-caption-url {
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .card img.fadein {
@@ -268,6 +289,7 @@ li {
   opacity: 0;
 }
 
+
 .card img.fadein.lazyloaded {
   opacity: 1;
 }
@@ -275,12 +297,14 @@ li {
 /*--------------------------------
  WORKS
 ---------------------------------*/
+#works{
+  background-color: #E0E0E2
+}
 
 #works .card {
-  flex-basis: 31%;
+  flex-basis: 45%;
   margin-bottom: px;
-  margin: 10px auto;
-  
+  margin: 20px auto;
 }
 
 #works .card-wrapper::after {
@@ -295,31 +319,9 @@ li {
 }
 
 /*--------------------------------
- FEATURE
----------------------------------*/
-
-#feature .section-body {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-#feature .section-image {
-  flex-basis: 58%;
-}
-
-#feature .section-image img {
-  width: 100%;
-  margin: 0 auto;
-}
-
-#feature .section-desc {
-  flex-basis: 37%;
-}
-
-/*--------------------------------
  ABOUT
 ---------------------------------*/
+
 
 #about .section-body {
   display: flex;
@@ -360,6 +362,10 @@ li {
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 auto;
+}
+#skill {
+ background-color: #1d1d1d;
+ color:#FFFFFF;
 }
 
 #skill .card {
@@ -534,10 +540,13 @@ li {
     height: 70vh;
   }
 
-  #header .logo-title {
-    font-size: 28px;
-    letter-spacing: .16em;
+  
+
+  /* 背景の横位置をズラす */
+  @keyframes example {
+    to { background-position-x: 200%; }
   }
+  
 
   #header .logo-desc {
     font-size: 11px;
@@ -594,9 +603,10 @@ li {
   }
 
   #works .card {
-    flex-basis: 48%;
+    flex-basis: 33%;
     margin-bottom: 30px;
   }
+ 
 
   #feature .section-image,
   #feature .section-desc {
